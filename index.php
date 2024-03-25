@@ -31,7 +31,7 @@
 
 			echo $ssh->exec('pwd');
 			echo $ssh->exec('ls -la');
-			echo "got here"
+			echo "got here";
 
 
 
