@@ -20,6 +20,7 @@
 	</h4> 
 
 	<?php
+	  set_include_path(get_include_path() . get_include_path().'/phpseclib');
 	  include('Net/SSH2.php');
 		if(isset($_POST['button1'])) { 
 			echo "This is Button1 that is selected";
