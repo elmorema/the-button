@@ -20,16 +20,12 @@
 	</h4> 
 
 	<?php
-	  set_include_path(get_include_path() . get_include_path().'/phpseclib');
-	  include('Net/SSH2.php');
 		if(isset($_POST['button1'])) { 
 			echo "This is Button1 that is selected";
-			$ssh = new Net_SSH2('www.domain.tld');
-			if (!$ssh->login('username', 'password')) {
-				exit('Login Failed');
-			}
-			echo $ssh->exec('pwd');
-			echo $ssh->exec('ls -la');
+			$connection = ssh2_connect('shell.example.com', 22);
+			ssh2_auth_password($connection, 'username', 'password');
+			$stream = ssh2_exec($connection, '/usr/local/bin/php -i');
+			
 		} 
 		if(isset($_POST['button2'])) { 
 			echo "This is Button2 that is selected"; 
