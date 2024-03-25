@@ -24,7 +24,7 @@
 		if(isset($_POST['button1'])) { 
 			echo "This is Button1 that is selected";
 			exec("ssh root@192.168.86.1 -p password", $output);
-			echo $output;
+			echo "$output";
 		} 
 		if(isset($_POST['button2'])) { 
 			echo "This is Button2 that is selected"; 
